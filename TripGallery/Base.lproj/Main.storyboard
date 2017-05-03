@@ -12,19 +12,38 @@
         <!--Trip Table View-->
         <scene sceneID="2v7-b6-H3Z">
             <objects>
-                <tableViewController title="Trip Table View" id="Akb-Mh-Y7Q" sceneMemberID="viewController">
+                <tableViewController title="Trip Table View" id="Akb-Mh-Y7Q" customClass="TableViewControllerTrips" customModule="TripGallery" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="tCe-1M-sMA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tripCell" id="tyL-i1-9qX">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tripCell" textLabel="Ncq-Kb-tw0" detailTextLabel="JJN-Ez-pch" style="IBUITableViewCellStyleValue1" id="tyL-i1-9qX">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tyL-i1-9qX" id="o9j-Vx-BvI">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ncq-Kb-tw0">
+                                            <rect key="frame" x="15" y="12" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JJN-Ez-pch">
+                                            <rect key="frame" x="316" y="12" width="44" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="JLf-1m-Bqq" kind="show" identifier="segueTripDetails" trigger="accessoryAction" id="4fh-W0-EgS"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -37,10 +56,10 @@
             </objects>
             <point key="canvasLocation" x="87" y="117"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Table View Controller Trip Info-->
         <scene sceneID="zkt-21-Vi8">
             <objects>
-                <tableViewController id="JLf-1m-Bqq" sceneMemberID="viewController">
+                <tableViewController id="JLf-1m-Bqq" customClass="TableViewControllerTripInfo" customModule="TripGallery" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="fQE-gN-BIQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -60,11 +79,18 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                                     <state key="normal" title="Save"/>
+                                                    <connections>
+                                                        <action selector="saveTripInfo:" destination="JLf-1m-Bqq" eventType="touchUpInside" id="3jK-ea-om9"/>
+                                                        <segue destination="vzt-11-NQu" kind="unwind" unwindAction="unWindSegueWithSegue:" id="DJp-41-aiz"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uhp-a4-0Km">
                                                     <rect key="frame" x="262" y="14" width="52" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Cancel"/>
+                                                    <connections>
+                                                        <segue destination="vzt-11-NQu" kind="unwind" unwindAction="unWindSegueWithSegue:" id="77k-x7-uQD"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -149,8 +175,14 @@
                             <outlet property="delegate" destination="JLf-1m-Bqq" id="VMR-v2-T5k"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="tripDate" destination="vwe-Ub-KQY" id="ZfE-cb-Gwk"/>
+                        <outlet property="tripDestination" destination="G5y-jj-Ec4" id="HUy-Qg-shN"/>
+                        <outlet property="tripDuration" destination="phd-iB-NGj" id="KRi-uU-311"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bD5-gb-Ea4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="vzt-11-NQu" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="989.60000000000002" y="117.39130434782609"/>
         </scene>
