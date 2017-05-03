@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49486C1F1EB9CD39003AD4E7 /* TableViewControllerTrips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49486C1E1EB9CD39003AD4E7 /* TableViewControllerTrips.swift */; };
+		49486C211EB9CD48003AD4E7 /* TableViewControllerTripInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49486C201EB9CD48003AD4E7 /* TableViewControllerTripInfo.swift */; };
 		49DDB6B21EB9C632008F3D15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DDB6B11EB9C632008F3D15 /* AppDelegate.swift */; };
 		49DDB6B41EB9C632008F3D15 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DDB6B31EB9C632008F3D15 /* ViewController.swift */; };
 		49DDB6B71EB9C632008F3D15 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49DDB6B51EB9C632008F3D15 /* Main.storyboard */; };
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		49486C1E1EB9CD39003AD4E7 /* TableViewControllerTrips.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewControllerTrips.swift; sourceTree = "<group>"; };
+		49486C201EB9CD48003AD4E7 /* TableViewControllerTripInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewControllerTripInfo.swift; sourceTree = "<group>"; };
 		49DDB6AE1EB9C632008F3D15 /* TripGallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripGallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49DDB6B11EB9C632008F3D15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49DDB6B31EB9C632008F3D15 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +106,8 @@
 				49DDB6B11EB9C632008F3D15 /* AppDelegate.swift */,
 				49DDB6B31EB9C632008F3D15 /* ViewController.swift */,
 				49DDB6B51EB9C632008F3D15 /* Main.storyboard */,
+				49486C1E1EB9CD39003AD4E7 /* TableViewControllerTrips.swift */,
+				49486C201EB9CD48003AD4E7 /* TableViewControllerTripInfo.swift */,
 				49DDB6BB1EB9C632008F3D15 /* Assets.xcassets */,
 				49DDB6BD1EB9C632008F3D15 /* LaunchScreen.storyboard */,
 				49DDB6C01EB9C632008F3D15 /* Info.plist */,
@@ -267,7 +273,9 @@
 			files = (
 				49DDB6B41EB9C632008F3D15 /* ViewController.swift in Sources */,
 				49DDB6BA1EB9C632008F3D15 /* TripGallery.xcdatamodeld in Sources */,
+				49486C1F1EB9CD39003AD4E7 /* TableViewControllerTrips.swift in Sources */,
 				49DDB6B21EB9C632008F3D15 /* AppDelegate.swift in Sources */,
+				49486C211EB9CD48003AD4E7 /* TableViewControllerTripInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,6 +526,7 @@
 				49DDB6DB1EB9C632008F3D15 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		49DDB6DC1EB9C632008F3D15 /* Build configuration list for PBXNativeTarget "TripGalleryTests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +535,7 @@
 				49DDB6DE1EB9C632008F3D15 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		49DDB6DF1EB9C632008F3D15 /* Build configuration list for PBXNativeTarget "TripGalleryUITests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +544,7 @@
 				49DDB6E11EB9C632008F3D15 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
